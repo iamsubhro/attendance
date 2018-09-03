@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="demoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'demo.dbo.abc' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="abc">
+    <Key>
+      <PropertyRef Name="rollno" />
+      <PropertyRef Name="sname" />
+      <PropertyRef Name="fathername" />
+      <PropertyRef Name="mothername" />
+    </Key>
+    <Property Name="rollno" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="sname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="fathername" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mothername" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="demo">
+    <Key>
+      <PropertyRef Name="Srno" />
+    </Key>
+    <Property Name="Srno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeCode" Type="varchar" MaxLength="50" />
+    <Property Name="EmployeeName" Type="varchar" MaxLength="50" />
+    <Property Name="Gender" Type="varchar" MaxLength="50" />
+    <Property Name="Designation" Type="varchar" MaxLength="50" />
+    <Property Name="Department" Type="varchar" MaxLength="50" />
+    <Property Name="EmailId" Type="varchar" MaxLength="50" />
+    <Property Name="ReportingTo" Type="varchar" MaxLength="50" />
+    <Property Name="Username" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="JoinDate" Type="varchar" MaxLength="50" />
+    <Property Name="UserRole" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="excel4">
+    <Key>
+      <PropertyRef Name="SerialNo" />
+    </Key>
+    <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="varchar" MaxLength="50" />
+    <Property Name="Day" Type="varchar" MaxLength="50" />
+    <Property Name="EmployeeCode" Type="varchar" MaxLength="50" />
+    <Property Name="EmployeeName" Type="varchar" MaxLength="50" />
+    <Property Name="Shift" Type="varchar" MaxLength="50" />
+    <Property Name="ScheduledInTime" Type="varchar" MaxLength="50" />
+    <Property Name="ScheduledOutTime" Type="varchar" MaxLength="50" />
+    <Property Name="ActualTimeIn" Type="varchar" MaxLength="50" />
+    <Property Name="ActualTimeOut" Type="varchar" MaxLength="50" />
+    <Property Name="WorkDuration" Type="varchar" MaxLength="50" />
+    <Property Name="OverTime" Type="varchar" MaxLength="50" />
+    <Property Name="TimeDuration" Type="varchar" MaxLength="50" />
+    <Property Name="LateBy" Type="varchar" MaxLength="50" />
+    <Property Name="EarlyGoingBy" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="excel5">
+    <Key>
+      <PropertyRef Name="Srno" />
+    </Key>
+    <Property Name="Srno" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Date" Type="varchar" MaxLength="50" />
+    <Property Name="Day" Type="varchar" MaxLength="50" />
+    <Property Name="ScheduledInTime" Type="varchar" MaxLength="50" />
+    <Property Name="ScheduledOutTime" Type="varchar" MaxLength="50" />
+    <Property Name="LateBy" Type="varchar" MaxLength="50" />
+    <Property Name="ReasonOfLeave" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="demoModelStoreContainer">
+    <EntitySet Name="demo" EntityType="Self.demo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="excel4" EntityType="Self.excel4" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="excel5" EntityType="Self.excel5" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="abc" EntityType="Self.abc" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [abc].[rollno] AS [rollno], 
+    [abc].[sname] AS [sname], 
+    [abc].[fathername] AS [fathername], 
+    [abc].[mothername] AS [mothername]
+    FROM [dbo].[abc] AS [abc]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

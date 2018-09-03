@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="demoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'demo.dbo.abc' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="abc">
+          <Key>
+            <PropertyRef Name="rollno" />
+            <PropertyRef Name="sname" />
+            <PropertyRef Name="fathername" />
+            <PropertyRef Name="mothername" />
+          </Key>
+          <Property Name="rollno" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="sname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="fathername" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="mothername" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="demo">
+          <Key>
+            <PropertyRef Name="Srno" />
+          </Key>
+          <Property Name="Srno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeCode" Type="varchar" MaxLength="50" />
+          <Property Name="EmployeeName" Type="varchar" MaxLength="50" />
+          <Property Name="Gender" Type="varchar" MaxLength="50" />
+          <Property Name="Designation" Type="varchar" MaxLength="50" />
+          <Property Name="Department" Type="varchar" MaxLength="50" />
+          <Property Name="EmailId" Type="varchar" MaxLength="50" />
+          <Property Name="ReportingTo" Type="varchar" MaxLength="50" />
+          <Property Name="Username" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="JoinDate" Type="varchar" MaxLength="50" />
+          <Property Name="UserRole" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="excel4">
+          <Key>
+            <PropertyRef Name="SerialNo" />
+          </Key>
+          <Property Name="SerialNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="varchar" MaxLength="50" />
+          <Property Name="Day" Type="varchar" MaxLength="50" />
+          <Property Name="EmployeeCode" Type="varchar" MaxLength="50" />
+          <Property Name="EmployeeName" Type="varchar" MaxLength="50" />
+          <Property Name="Shift" Type="varchar" MaxLength="50" />
+          <Property Name="ScheduledInTime" Type="varchar" MaxLength="50" />
+          <Property Name="ScheduledOutTime" Type="varchar" MaxLength="50" />
+          <Property Name="ActualTimeIn" Type="varchar" MaxLength="50" />
+          <Property Name="ActualTimeOut" Type="varchar" MaxLength="50" />
+          <Property Name="WorkDuration" Type="varchar" MaxLength="50" />
+          <Property Name="OverTime" Type="varchar" MaxLength="50" />
+          <Property Name="TimeDuration" Type="varchar" MaxLength="50" />
+          <Property Name="LateBy" Type="varchar" MaxLength="50" />
+          <Property Name="EarlyGoingBy" Type="varchar" MaxLength="50" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="excel5">
+          <Key>
+            <PropertyRef Name="Srno" />
+          </Key>
+          <Property Name="Srno" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Date" Type="varchar" MaxLength="50" />
+          <Property Name="Day" Type="varchar" MaxLength="50" />
+          <Property Name="ScheduledInTime" Type="varchar" MaxLength="50" />
+          <Property Name="ScheduledOutTime" Type="varchar" MaxLength="50" />
+          <Property Name="LateBy" Type="varchar" MaxLength="50" />
+          <Property Name="ReasonOfLeave" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="demoModelStoreContainer">
+          <EntitySet Name="demo" EntityType="Self.demo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="excel4" EntityType="Self.excel4" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="excel5" EntityType="Self.excel5" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="abc" EntityType="Self.abc" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [abc].[rollno] AS [rollno], 
+    [abc].[sname] AS [sname], 
+    [abc].[fathername] AS [fathername], 
+    [abc].[mothername] AS [mothername]
+    FROM [dbo].[abc] AS [abc]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="demoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="demo">
+          <Key>
+            <PropertyRef Name="Srno" />
+          </Key>
+          <Property Name="Srno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Designation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Department" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmailId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReportingTo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="JoinDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserRole" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="abc">
+          <Key>
+            <PropertyRef Name="rollno" />
+            <PropertyRef Name="sname" />
+            <PropertyRef Name="fathername" />
+            <PropertyRef Name="mothername" />
+          </Key>
+          <Property Name="rollno" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="sname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fathername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mothername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="demoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="demoes" EntityType="Self.demo" />
+          <EntitySet Name="abcs" EntityType="Self.abc" />
+          <EntitySet Name="excel5" EntityType="demoModel.excel5" />
+          <EntitySet Name="excel4" EntityType="demoModel.excel4" />
+        </EntityContainer>
+        <EntityType Name="excel5">
+          <Key>
+            <PropertyRef Name="Srno" />
+          </Key>
+          <Property Name="Srno" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Day" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ScheduledInTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ScheduledOutTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReasonOfLeave" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="excel4">
+          <Key>
+            <PropertyRef Name="SerialNo" />
+          </Key>
+          <Property Name="SerialNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Day" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmployeeCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Shift" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ScheduledInTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ScheduledOutTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ActualTimeIn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ActualTimeOut" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="WorkDuration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OverTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TimeDuration" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EarlyGoingBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="demoModelStoreContainer" CdmEntityContainer="demoEntities">
+          <EntitySetMapping Name="demoes">
+            <EntityTypeMapping TypeName="demoModel.demo">
+              <MappingFragment StoreEntitySet="demo">
+                <ScalarProperty Name="Srno" ColumnName="Srno" />
+                <ScalarProperty Name="EmployeeCode" ColumnName="EmployeeCode" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="ReportingTo" ColumnName="ReportingTo" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="JoinDate" ColumnName="JoinDate" />
+                <ScalarProperty Name="UserRole" ColumnName="UserRole" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="abcs">
+            <EntityTypeMapping TypeName="demoModel.abc">
+              <MappingFragment StoreEntitySet="abc">
+                <ScalarProperty Name="rollno" ColumnName="rollno" />
+                <ScalarProperty Name="sname" ColumnName="sname" />
+                <ScalarProperty Name="fathername" ColumnName="fathername" />
+                <ScalarProperty Name="mothername" ColumnName="mothername" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="excel5">
+            <EntityTypeMapping TypeName="demoModel.excel5">
+              <MappingFragment StoreEntitySet="excel5">
+                <ScalarProperty Name="ReasonOfLeave" ColumnName="ReasonOfLeave" />
+                <ScalarProperty Name="LateBy" ColumnName="LateBy" />
+                <ScalarProperty Name="ScheduledOutTime" ColumnName="ScheduledOutTime" />
+                <ScalarProperty Name="ScheduledInTime" ColumnName="ScheduledInTime" />
+                <ScalarProperty Name="Day" ColumnName="Day" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Srno" ColumnName="Srno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="excel4">
+            <EntityTypeMapping TypeName="demoModel.excel4">
+              <MappingFragment StoreEntitySet="excel4">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="EarlyGoingBy" ColumnName="EarlyGoingBy" />
+                <ScalarProperty Name="LateBy" ColumnName="LateBy" />
+                <ScalarProperty Name="TimeDuration" ColumnName="TimeDuration" />
+                <ScalarProperty Name="OverTime" ColumnName="OverTime" />
+                <ScalarProperty Name="WorkDuration" ColumnName="WorkDuration" />
+                <ScalarProperty Name="ActualTimeOut" ColumnName="ActualTimeOut" />
+                <ScalarProperty Name="ActualTimeIn" ColumnName="ActualTimeIn" />
+                <ScalarProperty Name="ScheduledOutTime" ColumnName="ScheduledOutTime" />
+                <ScalarProperty Name="ScheduledInTime" ColumnName="ScheduledInTime" />
+                <ScalarProperty Name="Shift" ColumnName="Shift" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="EmployeeCode" ColumnName="EmployeeCode" />
+                <ScalarProperty Name="Day" ColumnName="Day" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

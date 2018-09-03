@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="demoModelStoreContainer" CdmEntityContainer="demoEntities">
+    <EntitySetMapping Name="demoes">
+      <EntityTypeMapping TypeName="demoModel.demo">
+        <MappingFragment StoreEntitySet="demo">
+          <ScalarProperty Name="Srno" ColumnName="Srno" />
+          <ScalarProperty Name="EmployeeCode" ColumnName="EmployeeCode" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="ReportingTo" ColumnName="ReportingTo" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="JoinDate" ColumnName="JoinDate" />
+          <ScalarProperty Name="UserRole" ColumnName="UserRole" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="abcs">
+      <EntityTypeMapping TypeName="demoModel.abc">
+        <MappingFragment StoreEntitySet="abc">
+          <ScalarProperty Name="rollno" ColumnName="rollno" />
+          <ScalarProperty Name="sname" ColumnName="sname" />
+          <ScalarProperty Name="fathername" ColumnName="fathername" />
+          <ScalarProperty Name="mothername" ColumnName="mothername" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="excel5">
+      <EntityTypeMapping TypeName="demoModel.excel5">
+        <MappingFragment StoreEntitySet="excel5">
+          <ScalarProperty Name="ReasonOfLeave" ColumnName="ReasonOfLeave" />
+          <ScalarProperty Name="LateBy" ColumnName="LateBy" />
+          <ScalarProperty Name="ScheduledOutTime" ColumnName="ScheduledOutTime" />
+          <ScalarProperty Name="ScheduledInTime" ColumnName="ScheduledInTime" />
+          <ScalarProperty Name="Day" ColumnName="Day" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Srno" ColumnName="Srno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="excel4">
+      <EntityTypeMapping TypeName="demoModel.excel4">
+        <MappingFragment StoreEntitySet="excel4">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="EarlyGoingBy" ColumnName="EarlyGoingBy" />
+          <ScalarProperty Name="LateBy" ColumnName="LateBy" />
+          <ScalarProperty Name="TimeDuration" ColumnName="TimeDuration" />
+          <ScalarProperty Name="OverTime" ColumnName="OverTime" />
+          <ScalarProperty Name="WorkDuration" ColumnName="WorkDuration" />
+          <ScalarProperty Name="ActualTimeOut" ColumnName="ActualTimeOut" />
+          <ScalarProperty Name="ActualTimeIn" ColumnName="ActualTimeIn" />
+          <ScalarProperty Name="ScheduledOutTime" ColumnName="ScheduledOutTime" />
+          <ScalarProperty Name="ScheduledInTime" ColumnName="ScheduledInTime" />
+          <ScalarProperty Name="Shift" ColumnName="Shift" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="EmployeeCode" ColumnName="EmployeeCode" />
+          <ScalarProperty Name="Day" ColumnName="Day" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="SerialNo" ColumnName="SerialNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -14,3 +14,4 @@ The project was divided into different modules:
 8.Export data from database and downloading it as an excel file 
 9. Updating Reason of Leave when an employee leaves early or arrives late and then approval by the Admin whether that particular reason is accepted or rejected.
 10. Displaying the necessary details from the database as required to the table in different components
+11. Password changing module.
